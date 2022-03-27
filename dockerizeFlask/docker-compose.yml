@@ -6,7 +6,7 @@ services:
     ports:
       - 9000:9000
     environment:
-      - DEBUG=1
+      - DEBUG=0
     networks:
       - flask_network
 
@@ -18,5 +18,22 @@ services:
     networks:
       - flask_network
 
+  db:
+    image: postgres:13
+    restart: always
+    ports:
+      - 5433:5433
+    networks:
+      - flask_network
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=market
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
 networks:
   flask_network:
+
+volumes:
+  postgres_data:
