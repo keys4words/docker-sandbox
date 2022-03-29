@@ -7,3 +7,4 @@ flask_bcrypt
 flask_login
 psycopg2
 gunicorn
+Werkzeug~=2.0.0

@@ -22,7 +22,7 @@ services:
     image: postgres:13
     restart: always
     ports:
-      - 5433:5433
+      - 5432:5432
     networks:
       - flask_network
     environment:
@@ -30,7 +30,7 @@ services:
       - POSTGRES_PASSWORD=admin
       - POSTGRES_DB=market
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - db/init.sql:/docker-entrypoint-initdb.d/init.sql
 
 networks:
   flask_network:
