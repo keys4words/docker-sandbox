@@ -1,4 +1,5 @@
 -- create extension if not exists pg_stat_statements;
+-- https://www.tutorialspoint.com/postgresql/postgresql_using_autoincrement.htm
 CREATE TABLE COMPANY(
    ID  SERIAL PRIMARY KEY,
    NAME           TEXT      NOT NULL,
