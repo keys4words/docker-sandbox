@@ -1,4 +1,5 @@
-https://github.com/TaherAmlaki/ShoppingListApp https://www.taheramlaki.com/blog/articles/user-login-flask-mongodb-docker/ 
+https://github.com/TaherAmlaki/ShoppingListApp
+https://www.taheramlaki.com/blog/articles/user-login-flask-mongodb-docker/ 
 https://www.youtube.com/watch?v=TuQ7pbvKxs4&list=PLHEYl8GgFk1taeXxoUnr8bcPITeH153BX&index=1  - playlist Flask + ReactJS + docker
 https://www.youtube.com/watch?v=nlk0QlPdbcY
 https://www.youtube.com/watch?v=jyapP2Yy0AQ&t=343s - django in docker
