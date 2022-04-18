@@ -12,6 +12,13 @@ simple static html/css website via dockerfile
 - configuration in command args - Dockerfile.args
 - use inheritance via Dockerfile.child
 
+# buildtime-runtime
+django polls app with routes:
+1. localhost:8000/admin/ - admin panel login/pass - admin/admin
+2. localhost:8000/polls/ - show polls (you need create one/ones in admin panel)
+- deploy django with sqlite3 & migrate via scripts - Dockerfile.runtime
+- deploy django with sqlite3 & migrate with db persistance - Dockerfile.buildtime
+
 # dockerize Flask
 1. simpleFlask
 base flask app
