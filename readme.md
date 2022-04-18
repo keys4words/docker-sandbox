@@ -1,6 +1,17 @@
 # deploy static website
 simple static html/css website via dockerfile
 
+# args
+- ARG in dockerfile
+- ENV in dockerfile
+- metadata LABEL in dockefile
+
+# reusable - define configuration
+- in env variables - Dockerfile.env
+- hide configuration in ini file - Dockerfile.file
+- configuration in command args - Dockerfile.args
+- use inheritance via Dockerfile.child
+
 # dockerize Flask
 1. simpleFlask
 base flask app
