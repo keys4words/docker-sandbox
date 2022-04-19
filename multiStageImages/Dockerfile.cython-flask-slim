@@ -1,0 +1,10 @@
+FROM cython:3.7.3-full as dev
+WORKDIR /app
+COPY . .
+RUN python compile.py build_ext --inplace
+
+FROM flask:1.0.3-slim as prod
+WORKDIR /app
+COPY factors_flask.py /app/
+COPY --from=dev /app/factors.cpython-37m-x86_64-linux-gnu.so /app
+ENV FLASK_APP=factors_flask.py

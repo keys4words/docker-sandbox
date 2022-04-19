@@ -26,9 +26,13 @@ django polls app with routes:
 - Dockerfile.centos - 655Mb
 
 # multiStagedImage
-using cyton to compile python project (compile.py)
-Dockerfile.standard - use compiled cpython - 957Mb (faster)
-Dockerfile.multy - compile at first stage & run on 2d stage - 155Mb(same speed)
+- using cyton to compile python project (compile.py)
+- Dockerfile.standard - use compiled cpython - 957Mb (faster)
+- Dockerfile.multy - compile at first stage & run on 2d stage - 155Mb(same speed)
+use customed images for both stages:
+- Dockerfile.cython0.28.5-full - to create image for dev stage
+- Dockerfile.flask1.0.3-slim - to create image for prod stage
+- Dockerfile.cython-flask-slim - use both custom images
 
 
 # dockerize Flask
