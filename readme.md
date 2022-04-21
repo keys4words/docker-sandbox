@@ -34,6 +34,17 @@ use customed images for both stages:
 - Dockerfile.flask1.0.3-slim - to create image for prod stage
 - Dockerfile.cython-flask-slim - use both custom images
 
+# simpleTests
+1. build Dockerfile.multi as base image with name "flask-multy"
+2. build Dockerfile.tester as tester image above base image (--build-arg BaseImage=flask-multy)
+docker run --rm -it -v ${PWD}:/data tests
+- running pylint - look report at pyling.html
+- running pytest - look report at pytest_report.html
+- see coverage report in htmlcov/index.html
+3. build Dockerfile.debug as debugging image above base
+docker run --rm -it -p 5000:5000 debug
+- running pdb
+
 
 # dockerize Flask
 1. simpleFlask
