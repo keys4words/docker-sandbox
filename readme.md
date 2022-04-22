@@ -69,4 +69,5 @@ docker-compose exec web python manage.py create_db
 5. 
 
 # dockerize Golang
-deploy simple static app with multistaged image
+1. appWithoutLib - deploy simple static golang app with multistaged image
+2. echoApp - golang web app with Echo framework
