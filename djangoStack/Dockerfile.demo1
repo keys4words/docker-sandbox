@@ -1,0 +1,12 @@
+ARG BaseImage
+FROM $BaseImage
+ENV PYTHONUNBUFFERED 1
+WORKDIR /code
+COPY . .
+EXPOSE 8000
+RUN python manage.py makemigrations polls && \
+    python manage.py migrate && \
+    python manage.py loaddata initial_data.json && \
+    python manage.py collectstatic
+ENTRYPOINT ["python", "manage.py"]
+CMD ["runserver", "0:8000"]

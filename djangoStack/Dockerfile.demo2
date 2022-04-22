@@ -1,0 +1,13 @@
+ARG BaseImage
+FROM $BaseImage
+ENV PYTHONUNBUFFERED 1
+WORKDIR /code
+COPY . .
+EXPOSE 8000
+RUN python manage.py makemigrations polls && \
+    python manage.py migrate && \
+    python manage.py loaddata initial_data.json && \
+    python manage.py collectstatic && \
+    echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@example.com', 'admin')" | python manage.py shell
+ENTRYPOINT ["python", "manage.py"]
+CMD ["runserver", "0:8000"]

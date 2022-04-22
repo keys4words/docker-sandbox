@@ -1,0 +1,20 @@
+FROM django as dev
+WORKDIR /code
+COPY . .
+RUN pip install dj-database-url==0.5.0
+ARG DjangoSettings=mysite.settings_universal
+ENV DJANGO_SETTINGS_MODULE=$DjangoSettings
+RUN python manage.py collectstatic
+
+FROM ubuntu:18.04 as ssl
+RUN apt-get update && apt-get install -y openssl
+WORKDIR /ssl
+RUN openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 \
+    -keyout django-polls.key.pem -out django-polls.crt.pem \
+    -subj "/CN=django-polls.example.com"
+
+FROM nginx:1.17.0
+WORKDIR /code
+COPY --from=dev /code/static /code/static
+COPY --from=ssl /ssl/django-polls.key.pem /ssl/django-polls.crt.pem /code/
+COPY mysite_nginx_ssl.conf /etc/nginx/conf.d/

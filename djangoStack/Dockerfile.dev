@@ -1,0 +1,9 @@
+ARG BaseImage
+FROM $BaseImage
+ENV PYTHONUNBUFFERED 1
+WORKDIR /code
+COPY . .
+EXPOSE 8000
+VOLUME /code/data
+ENTRYPOINT ["python", "manage.py"]
+CMD ["runserver", "0:8000"]

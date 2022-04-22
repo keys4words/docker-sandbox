@@ -1,0 +1,11 @@
+ARG BaseImage
+FROM $BaseImage
+ENV PYTHONUNBUFFERED 1
+WORKDIR /code
+COPY . .
+EXPOSE 8000
+RUN pip install mysqlclient
+RUN python manage.py makemigrations polls && python manage.py collectstatic
+ARG DjangoSettings=mysite.settings_mariadb
+ENV DJANGO_SETTINGS_MODULE=$DjangoSettings
+CMD ["gunicorn", "-c", "gunicorn.ini", "mysite.wsgi"]
