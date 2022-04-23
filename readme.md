@@ -46,9 +46,12 @@ docker run --rm -it -p 5000:5000 debug
 - running pdb
 
 # djangoStack
-1. build base_image/Dockerfile.django
-2. Dockerfile.demo1 - poll app above base image with migrations
-3. Dockerfile.demo2 - poll app above base image with migrations & creating superuser
+1. pureDjango
+- use runner script with "superuser" arg to deploy poll app with migrations & creating superuser at localhost:8000
+- without superuser without any args
+2. gunicornDjango
+
+
 
 # dockerize Flask
 1. simpleFlask
