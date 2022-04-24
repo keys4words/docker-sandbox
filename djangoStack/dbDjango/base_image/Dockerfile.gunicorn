@@ -2,6 +2,6 @@ ARG BaseImage=python
 ARG ImageTag=3.7.3
 FROM $BaseImage:$ImageTag
 ENV PYTHONUNBUFFERED 1
-ARG DjangoVersion=3.2.13
-ARG GunicornVersion=20.1.0
+ARG DjangoVersion=2.2.1
+ARG GunicornVersion=19.9.0
 RUN pip install Django==$DjangoVersion gunicorn==$GunicornVersion

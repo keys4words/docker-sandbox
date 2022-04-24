@@ -11,11 +11,11 @@ docker run -d --name db -p 5432:5432 --network polls_net -e POSTGRES_DB=pollsdb 
 docker build -t polls -f Dockerfile.postgres --build-arg BaseImage=base .
 
 # populate db & create superuser
-docker run -it --rm --network polls_net polls python manage.py loaddata initial_data.json
-docker run -it --rm --network polls_net polls python manage.py createsuperuser
+# docker run -it --rm --network polls_net polls python manage.py loaddata initial_data.json
+# docker run -it --rm --network polls_net polls python manage.py createsuperuser
 
 # run app container
-# docker run -it --rm --network polls_net -p 8000:8000 polls
+docker run -it --rm --network polls_net -p 8000:8000 polls
 
 # run tests
 # docker run -it --rm --network polls_net -p 8000:8000 polls python manage.py test
