@@ -1,10 +1,10 @@
 #!/bin/bash
 
 docker build -t dj -f base_image/Dockerfile.django .
-if [ $1="superuser" ]; then
-	# django-with-migrations-superuser:
-	index=2
-else
+
+# django-with-migrations-superuser:
+index=2
+if [ $1 = "1" ]; then
 	# django-with-migrations:
 	index=1
 fi

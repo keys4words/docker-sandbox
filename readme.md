@@ -46,11 +46,9 @@ docker run --rm -it -p 5000:5000 debug
 - running pdb
 
 # djangoStack
-1. pureDjango
-- use runner script with "superuser" arg to deploy poll app with migrations & creating superuser at localhost:8000
-- without superuser without any args
-2. gunicornDjango
-
+1. pureDjango - deploy Django poll app with migrations & creating superuser at localhost:8000
+2. gunicornDjango - gunicorn/uwsgi + Django
+3. 
 
 
 # dockerize Flask
