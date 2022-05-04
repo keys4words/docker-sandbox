@@ -1,0 +1,24 @@
+image: ubuntu:20.04
+
+stages:
+  - env
+  - migrate
+  - test
+
+cache:
+  paths:
+    - ~/.cache/pip/
+
+env_job:
+  stage: env    
+  before_script:
+    - apt -y update
+    - apt -y install apt-utils
+    - apt -y install net-tools python3.8 python3-pip
+    - apt -y upgrade
+    - pip3 install -r requirements.txt
+    - pip3 install docker-compose
+  
+  
+  script:
+    - docker-compose run app sh -c "python manage.py test && flake8"
