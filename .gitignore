@@ -1,2 +1,4 @@
 recipeApp/teamcity/*
 recipeApp/teamcitylogs/*
+env/
+__pycache__/
