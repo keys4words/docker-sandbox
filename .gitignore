@@ -1,3 +1,5 @@
 teamcity/
 teamcitylogs/
 .env/
+env/
+__pycache__/
