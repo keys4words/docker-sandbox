@@ -72,3 +72,13 @@ docker-compose exec web python manage.py create_db
 # dockerize Golang
 1. appWithoutLib - deploy simple static golang app with multistaged image
 2. echoApp - golang web app with Echo framework
+
+# wordpress
+1. wordpress container
+2. mysql container
+
+# reactNodeMongo
+microservice movie list app
+1. frontend - React
+2. backend - NodeJS
+3. db - Mongo
