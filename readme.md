@@ -77,8 +77,3 @@ docker-compose exec web python manage.py create_db
 1. wordpress container
 2. mysql container
 
-# reactNodeMongo
-microservice movie list app
-1. frontend - React
-2. backend - NodeJS
-3. db - Mongo
