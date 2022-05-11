@@ -1,0 +1,18 @@
+stages:
+  - lint
+  - test
+
+lint stage:
+  stage: lint
+  script: echo OK
+
+test stage:
+  stage: test
+  image: python:latest
+  before_script:
+    - python -V
+    - python -m venv env
+    - source env/bin/activate
+  script:
+    - pip install flask
+    - python test.py
