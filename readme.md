@@ -52,13 +52,7 @@ docker run --rm -it -p 5000:5000 debug
 
 
 # dockerize Flask
-1. simpleFlask
-base flask app
-- docker build -t simpleflask:v1 .
-- docker run --rm -p 5001:5000 -d simpleflask:v1
-- routes:
-    - localhost:5001
-    - localhost:5001/test
+1. flask_cat - random cat simple flask app + deploy via AWS Elastic Beanstalk
 
 2. 
 deploy flask ecomm app with postgres db, gunicorn & nginx via docker-compose
