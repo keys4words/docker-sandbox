@@ -1,6 +1,10 @@
 # deploy static website
 simple static html/css website via dockerfile
 
+# wordpress
+1. wordpress container
+2. mysql container
+
 # args
 - ARG in dockerfile
 - ENV in dockerfile
@@ -53,21 +57,10 @@ docker run --rm -it -p 5000:5000 debug
 
 # dockerize Flask
 1. flask_cat - random cat simple flask app + deploy via AWS Elastic Beanstalk
-
-2. 
+2. market - ecomm flask app with dev in sqlite3 & prod in postgres 
 deploy flask ecomm app with postgres db, gunicorn & nginx via docker-compose
-1. cd dockerizeFlask
-2. docker-compose up -d --build
-docker-compose exec web python manage.py create_db
-3. docker exec -it <container_name_4_web> /bin/bash
-4. use 'PGPASSWORD=admin psql -U admin market' to connect to psql
-5. 
+ 
 
 # dockerize Golang
 1. appWithoutLib - deploy simple static golang app with multistaged image
 2. echoApp - golang web app with Echo framework
-
-# wordpress
-1. wordpress container
-2. mysql container
-

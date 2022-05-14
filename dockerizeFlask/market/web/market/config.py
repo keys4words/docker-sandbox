@@ -1,7 +1,7 @@
 import os
 
 
-DEV_DB = 'sqlite:///market.db'
+DEV_DB = 'sqlite:///market.sqlite'
 
 pg_user = os.environ.get("POSTGRES_USER")
 pg_pass = os.environ.get("POSTGRES_PASSWORD")
