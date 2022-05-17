@@ -1,15 +1,17 @@
 version: '3.7'
 services:
   web:
-    build: web
+    build: ./web
     restart: always
     ports:
       - 9000:9000
     environment:
       - DEBUG=0
+    depends_on:
+      - db
 
   proxy:
-    build: proxy
+    build: ./proxy
     restart: always
     ports:
       - 80:80
@@ -24,15 +26,13 @@ services:
       - POSTGRES_PASSWORD=admin
       - POSTGRES_DB=market
     volumes:
-      - db/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
 
   adminer:
     image: adminer
     restart: always
     ports:
       - 8080:8080
-    networks:
-      - flask_network
 
 # volumes:
   # postgres_data:

@@ -1,6 +1,5 @@
-PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
-CREATE TABLE user (
+CREATE TABLE user(
 	id INTEGER NOT NULL, 
 	username VARCHAR(30) NOT NULL, 
 	email_address VARCHAR(50) NOT NULL, 

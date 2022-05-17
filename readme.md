@@ -1,10 +1,6 @@
 # deploy static website
 simple static html/css website via dockerfile
 
-# wordpress
-1. wordpress container
-2. mysql container
-
 # args
 - ARG in dockerfile
 - ENV in dockerfile
@@ -52,14 +48,10 @@ docker run --rm -it -p 5000:5000 debug
 # djangoStack
 1. pureDjango - deploy Django poll app with migrations & creating superuser at localhost:8000
 2. gunicornDjango - gunicorn/uwsgi + Django
-3. 
-
 
 # dockerize Flask
 1. flask_cat - random cat simple flask app + deploy via AWS Elastic Beanstalk
 2. market - ecomm flask app with dev in sqlite3 & prod in postgres 
-deploy flask ecomm app with postgres db, gunicorn & nginx via docker-compose
- 
 
 # dockerize Golang
 1. appWithoutLib - deploy simple static golang app with multistaged image
