@@ -64,3 +64,9 @@ deploy flask ecomm app with postgres db, gunicorn & nginx via docker-compose
 # dockerize Golang
 1. appWithoutLib - deploy simple static golang app with multistaged image
 2. echoApp - golang web app with Echo framework
+
+# FoodTrucks
+San-Fransisco interactive map with searching
+https://github.com/prakhar1989/FoodTrucks
+1. backend - Flask API + ElasticSearch Engine
+2. frontend - React
