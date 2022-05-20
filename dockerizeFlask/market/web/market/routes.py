@@ -40,7 +40,6 @@ def market_page():
 
     if request.method == "GET":
         items = Item.query.filter_by(owner=None)
-        # items = Item.query.all()
         owned_items = Item.query.filter_by(owner=current_user.id)
         return render_template('market.html', items=items, purchase_form=purchase_form, owned_items=owned_items, selling_form=selling_form)
 
@@ -48,6 +47,7 @@ def market_page():
 def register_page():
     form = RegisterForm()
     if form.validate_on_submit():
+        print(form.username.data)
         user_to_create = Users(username=form.username.data,
                               email_address=form.email_address.data,
                               password=form.password1.data)
@@ -67,9 +67,10 @@ def login_page():
     form = LoginForm()
     if form.validate_on_submit():
         attempted_user = Users.query.filter_by(username=form.username.data).first()
-        if attempted_user and attempted_user.check_password_correction(
-                attempted_password=form.password.data
-        ):
+        if attempted_user is None:
+            flash('User is None', category='danger')
+            
+        if attempted_user and attempted_user.check_password_correction(attempted_password=form.password.data):
             login_user(attempted_user)
             flash(f'Success! You are logged in as: {attempted_user.username}', category='success')
             return redirect(url_for('market_page'))
