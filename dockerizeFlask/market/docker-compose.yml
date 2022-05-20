@@ -1,7 +1,9 @@
 version: '3.7'
 services:
   web:
-    build: ./web
+    build: 
+      context: ./web
+      dockerfile: Dockerfile.prod
     restart: always
     ports:
       - 9000:9000
@@ -9,12 +11,16 @@ services:
       - DEBUG=0
     depends_on:
       - db
-
+  
   proxy:
-    build: ./proxy
+    image: nginx:1.19.2-alpine
     restart: always
     ports:
       - 80:80
+    volumes:
+      - ./proxy/conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - web
 
   db:
     image: postgres:13-alpine

@@ -11,7 +11,6 @@ if os.environ.get('DEBUG') == '1':
 else:
     app.config['SQLALCHEMY_DATABASE_URI']  = PROD_DB
     
-# app.config['SQLALCHEMY_DATABASE_URI']  = DEV_DB
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 app.config['SECRET_KEY'] = 'ec9439cfc6c796ae2029594d'

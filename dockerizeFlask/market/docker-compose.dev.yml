@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile.dev
+    restart: always
+    ports:
+      - 9000:9000
+    environment:
+      - DEBUG=1

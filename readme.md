@@ -52,6 +52,7 @@ docker run --rm -it -p 5000:5000 debug
 # dockerize Flask
 1. flask_cat - random cat simple flask app + deploy via AWS Elastic Beanstalk
 2. market - ecomm flask app with dev in sqlite3 & prod in postgres 
+use login & pass - tester/tester
 
 # dockerize Golang
 1. appWithoutLib - deploy simple static golang app with multistaged image
