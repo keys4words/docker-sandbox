@@ -1,8 +1,0 @@
-mysite/__pycache__
-polls/__pycache__
-Dockerfile*
-.gitignore
-.git
-.dockerignore
-README.md
-LICENSE

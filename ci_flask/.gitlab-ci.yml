@@ -1,0 +1,24 @@
+stages:
+  - build_base
+  - build test
+  - lint
+  - test
+  - debug
+
+variables:
+  BASE_IMAGE: $CI_REGISTRY_IMAGE:latest
+
+build base image:
+  stage: build
+  image: docker:latest
+  services:
+    - docker:dind
+  before_script:
+    - echo $CI_BUILD_TOKEN | docker login -u "$CI_REGISTRY_USER" --password-stdin $CI_REGISTRY
+  script:
+    - docker build -t $BASE_IMAGE ./app
+    - docker push $BASE_IMAGE
+
+build test image above base image:
+  stage: test
+  image:

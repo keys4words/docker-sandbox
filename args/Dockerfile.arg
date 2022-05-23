@@ -1,8 +1,0 @@
-ARG Python_Image_Name=python
-ARG Python_Image_Tag=latest
-FROM $Python_Image_Name:$Python_Image_Tag
-ARG Flask_Ver=2.0.3
-RUN pip install flask==$Flask_Ver
-WORKDIR /app
-COPY hello-v2.py .
-CMD ["python","hello-v2.py"]
