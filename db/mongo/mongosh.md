@@ -1,6 +1,7 @@
 mongosh --host <hostname> -u <mongouser> -p <mongopass> --authenticationDatabase <dbname>
 use <dbname>
 show dbs/collections
+db.createCollection("items")
 db.dropDatabase()
 
 db.items.insertOne({ name : "Mike Tyson", age: 56, reach: {"WBA": "gold belt", "WBC": "gold belt"}})
