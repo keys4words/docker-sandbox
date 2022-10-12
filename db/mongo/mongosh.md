@@ -14,3 +14,7 @@ db.items.find({ age: { $gte: 56} }, { name: 1})
 db.items.find({ age: { $exists: false }})
 
 db.items.updateOne({ age: 57}, {$set: {age: 44 } })
+db.books.updateMany({})
+db.books.deleteOne/deleteMany({ gender: 'M'})
+
+db.books.find().forEach(function(student) {print(student._id)})
