@@ -3,3 +3,4 @@ teamcitylogs/
 .env/
 env/
 __pycache__/
+data/

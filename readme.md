@@ -12,6 +12,10 @@ docker run --rm -it -p 5000:5000 debug
 
 # db
 play with db in docker
+# mongodb making dumps in /dump/
+mongodump -u user -p pass
+mongorestore <url-dump> -u user -p pass
+
 
 # dockerize Flask
 1. flask_cat - random cat simple flask app + deploy via AWS Elastic Beanstalk
