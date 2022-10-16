@@ -4,9 +4,10 @@ db.createUser(
       pwd: "example",
       roles: [
           {
-              role: "readWrite",
+              role: "userAdminAnyDatabase",
               db: "students"
-          }
+          },
+          "readWriteAnyDatabase"
       ]
 
   }
