@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  web:
+    image: nginx:1.23.2-alpine
+    volumes:
+    - ./conf/:/etc/nginx/
+    - ./logs/:/var/log/nginx
+    ports:
+    - "8080:80"
+    environment:
+    - NGINX_HOST=foobar.com
+    - NGINX_PORT=80
