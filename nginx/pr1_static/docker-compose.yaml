@@ -4,10 +4,10 @@ services:
   web:
     image: nginx:1.23.2-alpine
     volumes:
-    - ./conf/:/etc/nginx/
-    - ./logs/:/var/log/nginx
+    - ./default.conf:/etc/nginx/conf.d/default.conf
+    - ./templates:/usr/share/nginx/html/
+    - ./pics/:/data/
     ports:
     - "8080:80"
     environment:
-    - NGINX_HOST=foobar.com
     - NGINX_PORT=80
