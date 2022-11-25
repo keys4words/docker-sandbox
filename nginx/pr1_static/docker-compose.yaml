@@ -6,7 +6,7 @@ services:
     volumes:
     - ./server1.conf:/etc/nginx/conf.d/default.conf
     - ./templates:/usr/share/nginx/html/
-    - ./pics/:/data/
+    - ./docs/:/docs/
     - ./nginx.conf://etc/nginx/nginx.conf
     ports:
     - "8080:80"
