@@ -1,6 +1,7 @@
 teamcity/
 teamcitylogs/
 .env/
+.gradle/
 env/
 __pycache__/
 data/
