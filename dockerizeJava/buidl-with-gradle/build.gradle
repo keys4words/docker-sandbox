@@ -5,13 +5,14 @@ buildscript {
             maven {
                 url "https://plugins.gradle.org/m2/"
             }
+            gradlePluginPortal()
     }
 }
 
 plugins {
     id 'java'
     id 'application'
-    id "com.palantir.docker" version "0.33.0"
+    id 'com.bmuschko.docker-java-application' version '6.7.0'
 }
 
 application {
@@ -19,6 +20,10 @@ application {
 }
 
 docker {
-    name 'intro:latest'
-    files tasks.distTar.outputs
+    javaApplication {
+        mainClassName = 'info.batey.HelloWorld'
+
+    }
+    // name 'intro:latest'
+    // files tasks.distTar.outputs
 }

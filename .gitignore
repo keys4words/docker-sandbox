@@ -5,3 +5,4 @@ teamcitylogs/
 env/
 __pycache__/
 data/
+build/
